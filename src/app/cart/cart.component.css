@@ -1,0 +1,27 @@
+.cart-table {
+    width: 80%; /* Adjust width as needed */
+    margin: 0 auto;
+    border-collapse: collapse;
+  }
+  
+  .cart-table th, .cart-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .cart-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .total-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    margin-top: 16px;
+  }
+  
+  .total-section p {
+    margin: 0;
+  }
+  

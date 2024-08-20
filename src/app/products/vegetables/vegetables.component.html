@@ -1,0 +1,22 @@
+<h2>Vegetables</h2>
+<div class="vegetable-container">
+  <mat-card *ngFor="let vegetable of vegetables" class="vegetable-card">
+    <mat-card-header>
+      <mat-card-title>{{ vegetable.name }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="vegetable.image" alt="{{ vegetable.name }}" class="product-image">
+    <mat-card-content>
+      <p class="price-display">Rs. {{ vegetable.cost.toFixed(2) }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <ng-container *ngIf="cart[vegetable.id] > 0; else addToCartTmpl">
+        <button mat-raised-button color="primary" (click)="removeFromCart(vegetable)">-</button>
+        <span>{{ cart[vegetable.id] }}</span>
+        <button mat-raised-button color="primary" (click)="addToCart(vegetable)">+</button>
+      </ng-container>
+      <ng-template #addToCartTmpl>
+        <button mat-raised-button color="primary" (click)="addToCart(vegetable)">Add to Cart</button>
+      </ng-template>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,36 @@
+.home-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .large-image {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .home-card {
+    width: 300px;
+  }
+  
+  .home-card img {
+    height: 150px;
+    object-fit: cover;
+  }
+
+  mat-card-actions {
+    justify-content: center;
+  }
+  
