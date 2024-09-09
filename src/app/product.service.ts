@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 import { Product } from './models/product';
 import { HttpClient } from '@angular/common/http';
 
@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProductService {
-  
+
   private apiUrl = '/api/products';
 
   constructor(private http: HttpClient) { }
@@ -18,6 +18,10 @@ export class ProductService {
 
   getFruits(): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.apiUrl}/fruits`);
+  }
+
+  getAppVersion(): Observable<string> {
+    return this.http.get<{ version: string }>(`/api/version`).pipe(map(val => val.version))
   }
 
   // getVegetables(): Observable<Product[]> {
